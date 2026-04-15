@@ -121,7 +121,6 @@ local GuiService = GetService("GuiService")
 local MarketplaceService = GetService("MarketplaceService")
 local ReplicatedStorage = GetService("ReplicatedStorage")
 local ContentProvider = GetService("ContentProvider")
-local InputManager = GetService("VirtualInputManager")
 local CoreGui = GetService("CoreGui")
 
 local Player = Players.LocalPlayer
@@ -1521,25 +1520,6 @@ local function Hide(Interface, JustHide: boolean?, Notify: boolean?, Bind: strin
 		if Interface.ClassName == "UIStroke" or Interface.ClassName == "UIGradient" then
 			Tween(Interface, { Transparency = 1 })
 		end
-	end
-	
-	-- hide popups
-	if not isStudio and Starlight.Instance.MobileToggle.Visible then
-		InputManager:SendTouchEvent(
-			0, 0, 0, 0
-		)
-
-		InputManager:SendTouchEvent(
-			0, 2, 0, 0
-		)
-	elseif not isStudio then
-		InputManager:SendMouseButtonEvent(
-			0, 0, 0, true, game, 0
-		)
-
-		InputManager:SendMouseButtonEvent(
-			0, 0, 0, false, game, 0
-		)
 	end
 
 
