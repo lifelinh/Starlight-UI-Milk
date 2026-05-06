@@ -68,7 +68,7 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "Milk Version 1.9 'Cannot Bee'"
+local Release = "1.9 'Cannot Bee'"
 local debugV = false
 
 local Starlight = {
@@ -2847,7 +2847,7 @@ function Starlight:CreateWindow(WindowSettings)
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
 					or "Starlight Interface Suite"
-				versionLabel.Text = title.Text == "Starlight Interface Suite" and Release or `Starlight UI {Release}`
+				versionLabel.Text = title.Text == `Milk Version {Release}`
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
