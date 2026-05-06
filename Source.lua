@@ -68,14 +68,14 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "1.9 'Cannot Bee'"
+local Release = "Prerelease Beta 5.03Meow"
 local debugV = false
 
 local Starlight = {
 
 	InterfaceBuild = "B5B9",
 
-	WindowKeybind = "LeftControl",
+	WindowKeybind = "K",
 
 	Minimized = false,
 	Maximized = false,
@@ -2846,8 +2846,8 @@ function Starlight:CreateWindow(WindowSettings)
 				title.TextTransparency = 1
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
-					or "Milk"
-				versionLabel.Text = title.Text == `Version {Release}`
+					or "Starlight Interface Suite"
+				versionLabel.Text = title.Text == "Starlight Interface Suite" and Release or `Starlight UI {Release}`
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
@@ -3389,7 +3389,16 @@ function Starlight:CreateWindow(WindowSettings)
 				local hour = t.hour
 
 				local formatted = string.format("%02d : %02d : %02d", hour, t.min, t.sec)
-				local greetingString = "Smiles delivered!"
+				local greetingString = ""
+				if hour >= 4 and hour < 12 then
+					greetingString = "Good Morning!"
+				elseif hour >= 12 and hour < 19 then
+					greetingString = "How's Your Day Going?"
+				elseif hour >= 19 and hour <= 23 then
+					greetingString = "Sweet Dreams."
+				else
+					greetingString = "Jeez you should be asleep..."
+				end
 				Tab.Instances.Page.playerUser.Text = `{greetingString} | {Player.Name}`
 
 				Tab.Instances.Page.clock.Text =
