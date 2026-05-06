@@ -68,14 +68,14 @@ by Nebula Softworks
 
 --// SECTION : Core Variables
 
-local Release = "Prerelease Beta 5.03Meow"
+local Release = "Milk Version 1.9 'Cannot Bee'"
 local debugV = false
 
 local Starlight = {
 
 	InterfaceBuild = "B5B9",
 
-	WindowKeybind = "K",
+	WindowKeybind = "LeftControl",
 
 	Minimized = false,
 	Maximized = false,
@@ -3389,16 +3389,7 @@ function Starlight:CreateWindow(WindowSettings)
 				local hour = t.hour
 
 				local formatted = string.format("%02d : %02d : %02d", hour, t.min, t.sec)
-				local greetingString = ""
-				if hour >= 4 and hour < 12 then
-					greetingString = "Good Morning!"
-				elseif hour >= 12 and hour < 19 then
-					greetingString = "How's Your Day Going?"
-				elseif hour >= 19 and hour <= 23 then
-					greetingString = "Sweet Dreams."
-				else
-					greetingString = "Jeez you should be asleep..."
-				end
+				local greetingString = "Smiles delivered!"
 				Tab.Instances.Page.playerUser.Text = `{greetingString} | {Player.Name}`
 
 				Tab.Instances.Page.clock.Text =
