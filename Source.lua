@@ -75,7 +75,7 @@ local Starlight = {
 
 	InterfaceBuild = "B5B9",
 
-	WindowKeybind = "K",
+	WindowKeybind = "LeftControl",
 
 	Minimized = false,
 	Maximized = false,
@@ -155,9 +155,8 @@ else
 end
 
 local isStudio = RunService:IsStudio() or false
-local website = "nebulasoftworks.xyz/starlight"
 local Acrylic = isStudio and require(ReplicatedStorage.AcrylicBundled)
-	or loadstring(game:HttpGet("https://raw." .. website .. "/AcrylicModule.luau"))()
+	or loadstring(game:HttpGet("https://raw.githubusercontent.com/lifelinh/Starlight-UI-Milk/refs/heads/master/Modules/Acrylic/Build.luau"))()
 Acrylic.Init()
 
 local Request = (fluxus and fluxus.request)
@@ -3390,16 +3389,7 @@ function Starlight:CreateWindow(WindowSettings)
 				local hour = t.hour
 
 				local formatted = string.format("%02d : %02d : %02d", hour, t.min, t.sec)
-				local greetingString = ""
-				if hour >= 4 and hour < 12 then
-					greetingString = "Good Morning!"
-				elseif hour >= 12 and hour < 19 then
-					greetingString = "How's Your Day Going?"
-				elseif hour >= 19 and hour <= 23 then
-					greetingString = "Sweet Dreams."
-				else
-					greetingString = "Jeez you should be asleep..."
-				end
+				local greetingString = "Smiles delivered!"
 				Tab.Instances.Page.playerUser.Text = `{greetingString} | {Player.Name}`
 
 				Tab.Instances.Page.clock.Text =
