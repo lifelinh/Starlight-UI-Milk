@@ -2846,8 +2846,8 @@ function Starlight:CreateWindow(WindowSettings)
 				title.TextTransparency = 1
 
 				title.Text = WindowSettings.LoadingSettings and WindowSettings.LoadingSettings.Title
-					or "Starlight Interface Suite"
-				versionLabel.Text = title.Text == `Milk Version {Release}`
+					or "Milk"
+				versionLabel.Text = title.Text == `Version {Release}`
 				title.playerName.Text = Player.DisplayName
 				playerIcon.Image = Players:GetUserThumbnailAsync(
 					Player.UserId,
